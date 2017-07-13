@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6nM-v3-ukz">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authors Table View Controller-->
+        <scene sceneID="8QF-yh-dOh">
+            <objects>
+                <tableViewController id="6nM-v3-ukz" customClass="AuthorsTableViewController" customModule="sttt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vkx-aW-oMz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAuthor" id="a8e-SL-7SU">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8e-SL-7SU" id="uOw-d4-FIY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6nM-v3-ukz" id="NJd-kp-9dH"/>
+                            <outlet property="delegate" destination="6nM-v3-ukz" id="Usn-RE-pAk"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ge6-Z7-PFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-958" y="-63"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WZT-iR-rst">
+            <objects>
+                <viewController id="Qac-Pg-vsv" customClass="ViewController" customModule="sttt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wsz-6H-QGs"/>
+                        <viewControllerLayoutGuide type="bottom" id="7t3-aP-W7P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JOz-hg-kPx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DfP-kB-teY">
+                                <rect key="frame" x="0.0" y="20" width="414" height="659"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="nGh-0F-G7y">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nGh-0F-G7y" id="86V-lw-n5O">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qac-Pg-vsv" id="Daf-6f-p20"/>
+                                    <outlet property="delegate" destination="Qac-Pg-vsv" id="Efi-3w-hct"/>
+                                </connections>
+                            </tableView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" stepValue="1.25" translatesAutoresizingMaskIntoConstraints="NO" id="C7Q-lV-ip9">
+                                <rect key="frame" x="16" y="687" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="step:" destination="Qac-Pg-vsv" eventType="valueChanged" id="IQW-2e-fMy"/>
+                                </connections>
+                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-yG-TpC">
+                                <rect key="frame" x="355" y="687" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Глаз"/>
+                                <connections>
+                                    <action selector="eye:" destination="Qac-Pg-vsv" eventType="touchUpInside" id="MTq-6Y-NjG"/>
+                                    <action selector="wwww:" destination="Qac-Pg-vsv" eventType="touchDown" id="TzL-9L-MKB"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-vc-85l">
+                                <rect key="frame" x="219" y="687" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="*****"/>
+                                    <segment title="П****"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentTap:" destination="Qac-Pg-vsv" eventType="valueChanged" id="Gcw-fW-HO1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="eyeButton" destination="Kzh-yG-TpC" id="R5v-P5-QTv"/>
+                        <outlet property="segment" destination="aTF-vc-85l" id="bNH-N4-vac"/>
+                        <outlet property="stepper" destination="C7Q-lV-ip9" id="I25-vB-Gd5"/>
+                        <outlet property="table" destination="DfP-kB-teY" id="siP-73-IwJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxY-2s-tbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19" y="-173"/>
+        </scene>
+    </scenes>
+</document>
