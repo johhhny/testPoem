@@ -11,38 +11,32 @@ import SQLite
 
 class AuthorsTableViewController: UITableViewController {
 
-    var str = [""]
+    //var str = [""]
+    var dict: [Int : String] = [:]
+    var path = ""
+    var id = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        print(path)
+        path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        //print(path)
         do {
             let db = try Connection("\(path)/dataBase.db")
             let users = Table("authors")
             let name = Expression<String>("name")
-            
-            /*do {
-             try db.run(users.create { t in
-             t.column(name)
-             })
-             } catch {
-             print("уже есть")
-             }
-             
-             
-             let insert = users.insert(name <- "Alice")
-             let rowid = try db.run(insert)
-             */
+            let number = Expression<Int>("number")
+
             for user in try db.prepare(users) {
-                print("name: \(user[name])")
-                str.append(user[name])
+                //print("name: \(user[name])")
+                dict[user[number]] = user[name]
+                //str.append(user[name])
             }
-            //print(str)
+            print(dict)
+            //str.removeFirst()
             tableView.reloadData()
         } catch {
-            print("123")
+            print("Ошибка")
         }
     }
 
@@ -55,20 +49,29 @@ class AuthorsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return str.count
+        return dict.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellAuthor", for: indexPath)
-        cell.textLabel?.text = str[indexPath.row]
-        print(str[indexPath.row])
+        //cell.textLabel?.text = str[indexPath.row]
+        //print(str[indexPath.row])
         // Configure the cell...
-
+        cell.textLabel?.text = dict[indexPath.row + 1]
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //id = 0
+        //id = indexPath.row + 1
+        //print(id)
+    }
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        id = 0
+        id = indexPath.row + 1
+        return indexPath
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -104,14 +107,41 @@ class AuthorsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showPoems" {
+            var dictPoems: [Int : String] = [:]
+            var tempArray: [String] = []
+            do {
+                let db = try Connection("\(path)/dataBase.db")
+                let users = Table("namePoems")
+                let name = Expression<String>("name")
+                let number = Expression<Int>("number")
+                let author = Expression<Int>("author")
+
+                for user in try db.prepare(users) {
+                    if user[author] == id {
+                        
+                        dictPoems[user[number]] = user[name]
+                    }
+                }
+                
+                for value in dictPoems.values {
+                    tempArray.append(value)
+                }
+                
+                let newVC = segue.destination as! PoemsTableViewController
+                newVC.dict = dictPoems
+                newVC.array = tempArray
+                newVC.paath = path
+            } catch {
+                print("Ошибка")
+            }
+        }
     }
-    */
+    
 
 }

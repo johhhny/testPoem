@@ -8,19 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		11732978167FA345D68E726F /* Pods_sttt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C40E87B45BAF45C09AB929 /* Pods_sttt.framework */; };
+		844BFDD81F17BC140044ED39 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 844BFDD71F17BC140044ED39 /* libsqlite3.tbd */; };
+		844BFDDA1F17BC1A0044ED39 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 844BFDD91F17BC1A0044ED39 /* libsqlite3.0.tbd */; };
+		844BFDDC1F17BD7D0044ED39 /* PoemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BFDDB1F17BD7D0044ED39 /* PoemsTableViewController.swift */; };
+		844BFDDE1F17CD9A0044ED39 /* dataBase.db in Resources */ = {isa = PBXBuildFile; fileRef = 844BFDDD1F17CD9A0044ED39 /* dataBase.db */; };
 		CE08F5DC1F0DFB0C00C5C4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08F5DB1F0DFB0C00C5C4F9 /* AppDelegate.swift */; };
 		CE08F5E11F0DFB0C00C5C4F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE08F5DF1F0DFB0C00C5C4F9 /* Main.storyboard */; };
 		CE08F5E31F0DFB0C00C5C4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE08F5E21F0DFB0C00C5C4F9 /* Assets.xcassets */; };
 		CE08F5E61F0DFB0C00C5C4F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE08F5E41F0DFB0C00C5C4F9 /* LaunchScreen.storyboard */; };
 		CE08F5F01F0DFE7200C5C4F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08F5EF1F0DFE7200C5C4F9 /* ViewController.swift */; };
 		CE08F5F41F174E2600C5C4F9 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE08F5F31F174E2600C5C4F9 /* SQLite.framework */; };
-		CE08F5F81F178E4600C5C4F9 /* dataBase.db in Resources */ = {isa = PBXBuildFile; fileRef = CE08F5F71F178E4600C5C4F9 /* dataBase.db */; };
 		CE08F5FA1F178ED200C5C4F9 /* LoadBD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08F5F91F178ED200C5C4F9 /* LoadBD.swift */; };
 		CE08F5FC1F178FE100C5C4F9 /* AuthorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08F5FB1F178FE100C5C4F9 /* AuthorsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20C40E87B45BAF45C09AB929 /* Pods_sttt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sttt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		844BFDD71F17BC140044ED39 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		844BFDD91F17BC1A0044ED39 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		844BFDDB1F17BD7D0044ED39 /* PoemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemsTableViewController.swift; sourceTree = "<group>"; };
+		844BFDDD1F17CD9A0044ED39 /* dataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dataBase.db; sourceTree = "<group>"; };
 		CC8112E2EF1CA16923AB11C7 /* Pods-sttt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sttt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sttt/Pods-sttt.debug.xcconfig"; sourceTree = "<group>"; };
 		CE08F5D81F0DFB0C00C5C4F9 /* sttt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sttt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08F5DB1F0DFB0C00C5C4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +37,6 @@
 		CE08F5E71F0DFB0C00C5C4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE08F5EF1F0DFE7200C5C4F9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE08F5F31F174E2600C5C4F9 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/sttt-ayljveodntpjoqfkpcdfwrwbpvkq/Build/Products/Debug-iphonesimulator/SQLite.swift/SQLite.framework"; sourceTree = "<group>"; };
-		CE08F5F71F178E4600C5C4F9 /* dataBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dataBase.db; sourceTree = "<group>"; };
 		CE08F5F91F178ED200C5C4F9 /* LoadBD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadBD.swift; sourceTree = "<group>"; };
 		CE08F5FB1F178FE100C5C4F9 /* AuthorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorsTableViewController.swift; path = ../AuthorsTableViewController.swift; sourceTree = "<group>"; };
 		E9B15920BA91766549747A7A /* Pods-sttt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sttt.release.xcconfig"; path = "Pods/Target Support Files/Pods-sttt/Pods-sttt.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844BFDDA1F17BC1A0044ED39 /* libsqlite3.0.tbd in Frameworks */,
+				844BFDD81F17BC140044ED39 /* libsqlite3.tbd in Frameworks */,
 				CE08F5F41F174E2600C5C4F9 /* SQLite.framework in Frameworks */,
 				11732978167FA345D68E726F /* Pods_sttt.framework in Frameworks */,
 			);
@@ -83,11 +91,12 @@
 				CE08F5EF1F0DFE7200C5C4F9 /* ViewController.swift */,
 				CE08F5F91F178ED200C5C4F9 /* LoadBD.swift */,
 				CE08F5FB1F178FE100C5C4F9 /* AuthorsTableViewController.swift */,
+				844BFDDB1F17BD7D0044ED39 /* PoemsTableViewController.swift */,
 				CE08F5DF1F0DFB0C00C5C4F9 /* Main.storyboard */,
 				CE08F5E21F0DFB0C00C5C4F9 /* Assets.xcassets */,
 				CE08F5E41F0DFB0C00C5C4F9 /* LaunchScreen.storyboard */,
 				CE08F5E71F0DFB0C00C5C4F9 /* Info.plist */,
-				CE08F5F71F178E4600C5C4F9 /* dataBase.db */,
+				844BFDDD1F17CD9A0044ED39 /* dataBase.db */,
 			);
 			path = sttt;
 			sourceTree = "<group>";
@@ -95,6 +104,8 @@
 		D05CF592A82952D361A111C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				844BFDD91F17BC1A0044ED39 /* libsqlite3.0.tbd */,
+				844BFDD71F17BC140044ED39 /* libsqlite3.tbd */,
 				CE08F5F31F174E2600C5C4F9 /* SQLite.framework */,
 				20C40E87B45BAF45C09AB929 /* Pods_sttt.framework */,
 			);
@@ -164,7 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE08F5F81F178E4600C5C4F9 /* dataBase.db in Resources */,
+				844BFDDE1F17CD9A0044ED39 /* dataBase.db in Resources */,
 				CE08F5E61F0DFB0C00C5C4F9 /* LaunchScreen.storyboard in Resources */,
 				CE08F5E31F0DFB0C00C5C4F9 /* Assets.xcassets in Resources */,
 				CE08F5E11F0DFB0C00C5C4F9 /* Main.storyboard in Resources */,
@@ -234,6 +245,7 @@
 			files = (
 				CE08F5FC1F178FE100C5C4F9 /* AuthorsTableViewController.swift in Sources */,
 				CE08F5F01F0DFE7200C5C4F9 /* ViewController.swift in Sources */,
+				844BFDDC1F17BD7D0044ED39 /* PoemsTableViewController.swift in Sources */,
 				CE08F5DC1F0DFB0C00C5C4F9 /* AppDelegate.swift in Sources */,
 				CE08F5FA1F178ED200C5C4F9 /* LoadBD.swift in Sources */,
 			);

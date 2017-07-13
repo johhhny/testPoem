@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6nM-v3-ukz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oVK-dv-T0v">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,13 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAuthor" id="a8e-SL-7SU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellAuthor" id="a8e-SL-7SU">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8e-SL-7SU" id="uOw-d4-FIY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="32D-Pi-wPj" kind="show" identifier="showPoems" id="1Iv-Zg-b20"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,10 +36,51 @@
                             <outlet property="delegate" destination="6nM-v3-ukz" id="Usn-RE-pAk"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="vR6-sR-9Af"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="6EV-Mt-VHO" id="71e-if-T6z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ge6-Z7-PFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="6EV-Mt-VHO">
+                    <connections>
+                        <outlet property="delegate" destination="6nM-v3-ukz" id="gU7-wZ-009"/>
+                        <outlet property="searchContentsController" destination="6nM-v3-ukz" id="hqf-iV-tS6"/>
+                        <outlet property="searchResultsDataSource" destination="6nM-v3-ukz" id="HGy-Zh-HTT"/>
+                        <outlet property="searchResultsDelegate" destination="6nM-v3-ukz" id="jAw-cP-YZI"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-958" y="-63"/>
+            <point key="canvasLocation" x="481.15942028985512" y="373.36956521739131"/>
+        </scene>
+        <!--Poems Table View Controller-->
+        <scene sceneID="UQs-bi-fd7">
+            <objects>
+                <tableViewController id="32D-Pi-wPj" customClass="PoemsTableViewController" customModule="sttt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="b6N-Sv-JC7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellPoem" id="Spb-9J-yWY">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Spb-9J-yWY" id="Kp4-dG-uAE">
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="32D-Pi-wPj" id="ymW-HJ-gAM"/>
+                            <outlet property="delegate" destination="32D-Pi-wPj" id="SUw-Og-cQD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giU-p2-W7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276.8115942028987" y="372.554347826087"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WZT-iR-rst">
@@ -108,7 +153,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxY-2s-tbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="-173"/>
+            <point key="canvasLocation" x="-426" y="-295"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3RQ-ad-Ts3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oVK-dv-T0v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tv5-yV-0Ks">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6nM-v3-ukz" kind="relationship" relationship="rootViewController" id="XL7-IT-MpR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yB4-G5-Myi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-323" y="373"/>
         </scene>
     </scenes>
 </document>

@@ -14,19 +14,19 @@ class Load_BD {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileURL = documentsURL.appendingPathComponent(fileName)
         
-        print(fileURL)
+        //print(fileURL)
         return fileURL.path
     }
     
     class func copyFile(fileName: NSString) {
         let dbPath: String = getPath(fileName: fileName as String)
         let fileManager = FileManager.default
-        print(fileManager.fileExists(atPath: dbPath))
+        //print(fileManager.fileExists(atPath: dbPath))
         if !fileManager.fileExists(atPath: dbPath) {
             
             let documentsURL = Bundle.main.resourceURL
             let fromPath = documentsURL!.appendingPathComponent(fileName as String)
-            print(fromPath)
+            //print(fromPath)
             var error : NSError?
             do {
                 try fileManager.copyItem(atPath: fromPath.path, toPath: dbPath)
@@ -43,7 +43,7 @@ class Load_BD {
         }
         else
         {
-            print("ddddd")
+            print("База данных есть!")
         }
     }
 }
