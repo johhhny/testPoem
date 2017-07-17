@@ -14,6 +14,7 @@ class PoemsTableViewController: UITableViewController {
     var dict: [Int : String] = [:]
     var array = [""]
     var paath = ""
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,29 +47,9 @@ class PoemsTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        do {
-            let db = try Connection("\(paath)/dataBase.db")
-            let users = Table("poems")
-            let text = Expression<String>("text")
-            let num = Expression<Int>("num")
-            
-            var currentStr = 0
-            for (key, value) in dict {
-                if value == array[indexPath.row] {
-                    currentStr = key
-                }
-            }
-            
-            for user in try db.prepare(users) {
-                if user[num] == currentStr {
-                    print(user[text])
-                }
-            }
-            
-        } catch {
-            print("Ошибка")
-        }
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        index = indexPath.row
+        return indexPath
     }
     /*
     // Override to support conditional editing of the table view.
@@ -105,14 +86,47 @@ class PoemsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showPoem" {
+            do {
+                let db = try Connection("\(paath)/dataBase.db")
+                let users = Table("poems")
+                let text = Expression<String>("text")
+                let num = Expression<Int>("num")
+                let countRow = Expression<Int>("countRow")
+                
+                var currentStr = 0
+                for (key, value) in dict {
+                    if value == array[index] {
+                        currentStr = key
+                    }
+                }
+                
+                var qwe = ""
+                var ii = 0
+                for user in try db.prepare(users) {
+                    if user[num] == currentStr {
+                        //print(user[text])
+                        qwe = user[text]
+                        ii = user[countRow]
+                    }
+                }
+                if ii == qwe.components(separatedBy: "\n").count {
+                    print("Верный стих")
+                    let newVC = segue.destination as! ViewController
+                    newVC.poem = qwe.components(separatedBy: "\n")
+                }
+                
+                
+            } catch {
+                print("Ошибка")
+            }
+        }
     }
-    */
+    
 
 }

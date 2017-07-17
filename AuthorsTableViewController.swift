@@ -121,10 +121,19 @@ class AuthorsTableViewController: UITableViewController {
                 let name = Expression<String>("name")
                 let number = Expression<Int>("number")
                 let author = Expression<Int>("author")
-
+                
+                let query = users.select(name, number, author)  // SELECT "email" FROM "users"
+                    .filter(author == id)     // WHERE "name" IS NOT NULL
+                    //.order(email.desc, name) // ORDER BY "email" DESC, "name"
+                    //.limit(5, offset: 1)
+                
+                
+                for rt in try db.prepare(query) {
+                    print(rt)
+                }
+                
                 for user in try db.prepare(users) {
                     if user[author] == id {
-                        
                         dictPoems[user[number]] = user[name]
                     }
                 }
